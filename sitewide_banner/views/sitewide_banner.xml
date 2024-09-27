@@ -1,0 +1,9 @@
+<odoo>
+<template id="sitewide_banner" name="Sitewide Banner" inherit_id="portal.frontend_layout">
+    <xpath expr="//header" position="before">
+        <t t-if="website and website.sitewide_banner_text">
+            <div class="text-center pt-3" t-attf-style="background-color: #{website.sitewide_banner_background};" t-out="website.sitewide_banner_text"/>
+        </t>
+    </xpath>
+</template>
+</odoo>
