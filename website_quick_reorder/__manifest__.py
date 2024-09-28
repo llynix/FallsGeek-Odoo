@@ -7,7 +7,7 @@
     'category': 'eCommerce',
     'depends': ['website_sale'],
     'license': 'AGPL-3',
-    'images': ['static/description/quick-reorder-cover.png',]
+    'images': ['static/description/quick-reorder-cover.png',],
     'data': [
         'views/reorder.xml',
         'views/reorder_button.xml',
