@@ -9,31 +9,22 @@
             <field name="priority" eval="20"/>
             <field name="inherit_id" ref="website.res_config_settings_view_form"/>
             <field name="arch" type="xml">
-                <div id="cdn_setting" position="after">
-                    <div class="col-12 col-lg-6 o_setting_box" id="sitewide_banner_setting">
-                        <div class="o_setting_left_pane">
+                <xpath expr="//setting[@id='livechat']" position="after">
+                        <setting id="sitewide_banner"                    
+                                 title="Enable a Sitewide Banner">
                             <field name="show_sitewide_banner"/>
-                        </div>
-                        <div class="o_setting_right_pane">
-                            <label for="show_sitewide_banner"/>
-                            <div class="text-muted">
-                                Enable the Sitewide Banner
-                            </div>
-                            <div class="content-group" attrs="{'invisible': [('show_sitewide_banner', '=', False)]}">
-                                <div class="row mt16">
+                            <div class="content-group" invisible="not show_sitewide_banner">
+                                <div class="mt16">
                                     <label class="o_light_label" string="Background Color" for="sitewide_banner_background"/>
-                                    <field name="sitewide_banner_background" widget="color"
-                                        attrs="{'required': [('show_sitewide_banner', '!=', False)]}"/>
+                                    <field name="sitewide_banner_background" widget="color" />
                                 </div>
-                                <div class="row mt16">
+                                <div class="mt16">
                                     <label class="o_light_label" string="Sitewide Banner Text" for="sitewide_banner_text"/>
-                                    <field name="sitewide_banner_text" placeholder="Text here" style="width:100%"
-                                        attrs="{'required': [('show_sitewide_banner', '!=', False)]}"/>
+                                    <field name="sitewide_banner_text" options="{'codeview': true}" placeholder="Text here" style="width:100%"/>
                                 </div>
                             </div>
-                        </div>
-                    </div>
-                </div>
+                        </setting>
+                </xpath>
             </field>
         </record>
 
